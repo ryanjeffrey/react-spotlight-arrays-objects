@@ -1,3 +1,4 @@
+import { brands } from "./data"
 // INPUT: an object with a "name" attribute such as
 //   {name: 'Benny', type: 'dog'}
 // OUTPUT: the value of the 'name' attribute i.e. Benny
@@ -68,12 +69,16 @@ export const getFirstTwoArgs = (a, b, ...rest) => {
 //    return a NEW object, do not modify the object passed in to the function
 //    use spread operator to create a new object
 
-export const addSneakerCount = () => {}
+export const addSneakerCount = ({ shoes, ...rest }) => {
+  return { shoes, ...rest, sneakerCount: shoes.length }
+}
 
 // INPUT: brands from data.js
 // OUTPUT: the brand names listed
 // REQS: use Object.keys to solve
-export const getBrandNames = () => {}
+export const getBrandNames = (brands) => {
+  return Object.keys(brands)
+}
 
 // INPUT: brands from data.js
 // OUTPUT: total number of sneaker types across all brands (14)
